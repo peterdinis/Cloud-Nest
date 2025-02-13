@@ -1,3 +1,5 @@
+"use client"
+
 import { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 import FileCard from './FileCard';
