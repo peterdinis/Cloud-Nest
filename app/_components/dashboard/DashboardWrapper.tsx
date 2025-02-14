@@ -17,7 +17,7 @@ const DashboardWrapper: FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 dark:bg-background flex">
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       
       <div className="flex-1">
@@ -29,7 +29,7 @@ const DashboardWrapper: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="mb-8"
           >
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Recent Files</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-sky-50 mb-4">Recent Files</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {recentFiles.map((file) => (
                 <FileCard key={file.id} file={file} />
@@ -42,7 +42,7 @@ const DashboardWrapper: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Quick Access</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-sky-50 mb-4">Quick Access</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {recentFiles.slice(0, 2).map((file) => (
                 <FileCard key={file.id} file={file} />
