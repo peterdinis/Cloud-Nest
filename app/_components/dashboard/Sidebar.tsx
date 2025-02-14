@@ -42,7 +42,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
         </motion.a>
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Files size={20} />
-          <span>Folders Open</span>
+          <span>Folders</span>
         </motion.a>
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Star size={20} />
