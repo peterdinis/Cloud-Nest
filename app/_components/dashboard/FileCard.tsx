@@ -15,7 +15,7 @@ const FileCard: FC<FileProps> = ({file}: FileProps) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+      className="bg-white dark:bg-stone-900 p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
@@ -23,19 +23,19 @@ const FileCard: FC<FileProps> = ({file}: FileProps) => {
             <FileText className="text-blue-500" size={24} />
           </div>
           <div>
-            <h3 className="font-medium text-gray-900">{file.name}</h3>
+            <h3 className="font-medium text-gray-900 dark:text-sky-50">{file.name}</h3>
             <p className="text-sm text-gray-500">{file.size}</p>
           </div>
         </div>
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="p-1 hover:bg-gray-100 rounded-full"
+          className="p-1 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-full"
         >
-          <MoreVertical size={20} className="text-gray-500" />
+          <MoreVertical size={20} className="text-gray-500 dark:text-sky-50" />
         </motion.button>
       </div>
-      <div className="mt-4 text-sm text-gray-500">
+      <div className="mt-4 text-sm text-gray-500 dark:text-sky-50">
         Last modified {file.lastModified}
       </div>
     </motion.div>
