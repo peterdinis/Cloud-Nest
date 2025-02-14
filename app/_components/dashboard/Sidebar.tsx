@@ -18,9 +18,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   const menuItems = [
     { icon: Files, label: 'My Files' },
     { icon: FolderOpen, label: 'Folders' },
-    { icon: Clock, label: 'Recent' },
     { icon: Star, label: 'Starred' },
-    { icon: Upload, label: 'Upload' },
     { icon: Trash2, label: 'Trash' },
   ];
 
@@ -40,7 +38,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           className="w-full bg-blue-500 text-white rounded-lg py-3 px-4 flex items-center justify-center gap-2 font-medium"
         >
           <Upload size={20} />
-          <span>Upload Files</span>
+          <span>Upload File/s</span>
         </motion.button>
       </div>
 
