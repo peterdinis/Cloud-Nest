@@ -29,7 +29,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       initial={{ width: isOpen ? 256 : 0 }}
       animate={{ width: isOpen ? 256 : 0 }}
       className={clsx(
-        'bg-white border-r border-gray-200 h-screen overflow-hidden',
+        'bg-white dark:bg-background border-r border-gray-200 h-screen overflow-hidden',
         isOpen ? 'block' : 'hidden'
       )}
     >
@@ -49,7 +49,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           <motion.a
             key={item.label}
             whileHover={{ backgroundColor: '#f3f4f6' }}
-            className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 cursor-pointer"
+            className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 dark:bg-background cursor-pointer"
           >
             <item.icon size={20} />
             <span>{item.label}</span>
