@@ -7,7 +7,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import SettingsDialog from '../shared/SettingsDialog';
+import SettingsDialog from '../shared/dialogs/SettingsDialog';
 
 interface SidebarProps {
   isOpen: boolean;

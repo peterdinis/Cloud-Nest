@@ -12,7 +12,7 @@ import {
     FormLabel,
 } from "@/components/ui/form"
 import { toast } from "@/hooks/use-toast";
-import { ModeToggle } from "./ModeToggle";
+import { ModeToggle } from "../ModeToggle";
 
 const FormSchema = z.object({
     marketing_emails: z.boolean().default(false).optional(),
