@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Files, FolderOpen, Upload, Star, Clock, Trash2, Settings } from 'lucide-react';
+import { Files, FolderOpen, Upload, Star, Trash2, Settings } from 'lucide-react';
 import clsx from 'clsx';
 import {
   Dialog,
@@ -15,13 +15,6 @@ interface SidebarProps {
 }
 
 export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
-  const menuItems = [
-    { icon: Files, label: 'My Files' },
-    { icon: FolderOpen, label: 'Folders' },
-    { icon: Star, label: 'Starred' },
-    { icon: Trash2, label: 'Trash' },
-  ];
-
   return (
     <motion.div
       initial={{ width: isOpen ? 256 : 0 }}
@@ -43,15 +36,22 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       </div>
 
       <nav className="mt-4 dark:bg-background">
-        {menuItems.map((item) => (
-          <motion.a
-            key={item.label}
-            className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer"
-          >
-            <item.icon size={20} />
-            <span>{item.label}</span>
-          </motion.a>
-        ))}
+        <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
+          <Files size={20} />
+          <span>My Files</span>
+        </motion.a>
+        <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
+          <Files size={20} />
+          <span>Folders Open</span>
+        </motion.a>
+        <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
+          <Star size={20} />
+          <span>Started</span>
+        </motion.a>
+        <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
+          <Trash2 size={20} />
+          <span>Trash</span>
+        </motion.a>
       </nav>
 
       <div className="absolute bottom-4 w-full px-4">
