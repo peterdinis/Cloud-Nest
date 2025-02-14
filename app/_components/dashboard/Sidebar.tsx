@@ -44,12 +44,11 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
         </motion.button>
       </div>
 
-      <nav className="mt-4">
+      <nav className="mt-4 dark:bg-background">
         {menuItems.map((item) => (
           <motion.a
             key={item.label}
-            whileHover={{ backgroundColor: '#f3f4f6' }}
-            className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 dark:bg-background cursor-pointer"
+            className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer"
           >
             <item.icon size={20} />
             <span>{item.label}</span>
@@ -59,8 +58,7 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
 
       <div className="absolute bottom-4 w-full px-4">
         <motion.button
-          whileHover={{ backgroundColor: '#f3f4f6' }}
-          className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 w-full"
+          className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 w-full"
         >
           <Settings size={20} />
           <Dialog>
