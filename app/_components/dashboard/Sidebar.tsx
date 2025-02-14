@@ -2,6 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Files, FolderOpen, Upload, Star, Clock, Trash2, Settings } from 'lucide-react';
 import clsx from 'clsx';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import SettingsDialog from '../shared/SettingsDialog';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -57,7 +63,12 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 w-full"
         >
           <Settings size={20} />
-          <span>Settings</span>
+          <Dialog>
+            <DialogTrigger>Settings</DialogTrigger>
+            <DialogContent>
+              <SettingsDialog />
+            </DialogContent>
+          </Dialog>
         </motion.button>
       </div>
     </motion.div>
