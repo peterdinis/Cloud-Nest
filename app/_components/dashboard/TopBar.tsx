@@ -38,7 +38,7 @@ export function TopBar({ toggleSidebar }: TopBarProps) {
           className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg"
         >
           <Plus size={20} />
-          <span>New</span>
+          <span>New Folder</span>
         </motion.button>
       </div>
     </div>
