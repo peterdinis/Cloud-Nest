@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Files, FolderOpen, Upload, Star, Trash2, Settings } from 'lucide-react';
+import { Files, Upload, Star, Trash2, Settings } from 'lucide-react';
 import clsx from 'clsx';
 import {
   Dialog,
@@ -8,13 +7,15 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import SettingsDialog from '../shared/dialogs/SettingsDialog';
+import TrashDialog from '../shared/dialogs/TrashDialog';
+import Link from 'next/link';
 
 interface SidebarProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
 }
 
-export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
+export function Sidebar({ isOpen }: SidebarProps) {
   return (
     <motion.div
       initial={{ width: isOpen ? 256 : 0 }}
@@ -38,19 +39,24 @@ export function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       <nav className="mt-4 dark:bg-background">
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Files size={20} />
-          <span>My Files</span>
+          <Link href="/dashboard">Files</Link>
         </motion.a>
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Files size={20} />
-          <span>Folders</span>
+          <Link href="/folders">Folders</Link>
         </motion.a>
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Star size={20} />
-          <span>Started</span>
+          <Link href="/files/started">Started</Link>
         </motion.a>
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Trash2 size={20} />
-          <span>Trash</span>
+          <Dialog>
+            <DialogTrigger>Trash</DialogTrigger>
+            <DialogContent>
+              <TrashDialog />
+            </DialogContent>
+          </Dialog>
         </motion.a>
       </nav>
 
