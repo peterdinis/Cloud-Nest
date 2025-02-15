@@ -2,6 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Menu, Search, Plus } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import UploadFolderDialog from '../shared/dialogs/UploadFolderDialog';
 
 interface TopBarProps {
   toggleSidebar: () => void;
@@ -39,7 +45,12 @@ export function TopBar({ toggleSidebar }: TopBarProps) {
           className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg"
         >
           <Plus size={20} />
-          <span>New Folder</span>
+          <Dialog>
+            <DialogTrigger>Upload new folder</DialogTrigger>
+            <DialogContent>
+              <UploadFolderDialog />
+            </DialogContent>
+          </Dialog>
         </motion.button>
       </div>
     </div>
