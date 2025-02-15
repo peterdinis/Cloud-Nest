@@ -9,6 +9,7 @@ import {
 import SettingsDialog from '../shared/dialogs/SettingsDialog';
 import TrashDialog from '../shared/dialogs/TrashDialog';
 import Link from 'next/link';
+import UploadFileDialog from '../shared/dialogs/UploadFileDialog';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -32,7 +33,12 @@ export function Sidebar({ isOpen }: SidebarProps) {
           className="w-full bg-blue-500 text-white rounded-lg py-3 px-4 flex items-center justify-center gap-2 font-medium"
         >
           <Upload size={20} />
-          <span>Upload File/s</span>
+          <Dialog>
+          <DialogTrigger>Upload File</DialogTrigger>
+            <DialogContent>
+              <UploadFileDialog />
+            </DialogContent>
+          </Dialog>
         </motion.button>
       </div>
 
