@@ -53,7 +53,7 @@ export function Sidebar({ isOpen }: SidebarProps) {
         </motion.a>
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Star size={20} />
-          <Link href="/files/started">Started</Link>
+          <Link href="/started">Started</Link>
         </motion.a>
         <motion.a className="flex items-center gap-3 px-4 py-3 text-gray-700 dark:text-sky-50 dark:bg-background cursor-pointer">
           <Trash2 size={20} />

@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, MoreVertical } from 'lucide-react';
+import { FileText, MoreVertical, Star, Trash } from 'lucide-react';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
 interface FileProps {
   file: {
@@ -11,7 +16,7 @@ interface FileProps {
   };
 }
 
-const FileCard: FC<FileProps> = ({file}: FileProps) => {
+const FileCard: FC<FileProps> = ({ file }: FileProps) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -32,7 +37,21 @@ const FileCard: FC<FileProps> = ({file}: FileProps) => {
           whileTap={{ scale: 0.9 }}
           className="p-1 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-full"
         >
-          <MoreVertical size={20} className="text-gray-500 dark:text-sky-50" />
+          <Popover>
+            <PopoverTrigger>
+              <MoreVertical size={20} className="text-gray-500 dark:text-sky-50" />
+            </PopoverTrigger>
+            <PopoverContent>
+              <div className="flex items-center gap-2 font-bold text-lg">
+                <Trash />
+                <span>Move to trash</span>
+              </div>
+              <div className="flex items-center gap-2 font-bold text-lg mt-4">
+                <Star />
+                <span>Add to starred</span>
+              </div>
+            </PopoverContent>
+          </Popover>
         </motion.button>
       </div>
       <div className="mt-4 text-sm text-gray-500 dark:text-sky-50">
