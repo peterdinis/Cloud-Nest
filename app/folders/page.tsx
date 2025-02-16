@@ -1,11 +1,8 @@
 import { NextPage } from "next";
+import FoldersWrapper from "../_components/folders/FoldersWrapper";
 
 const FoldersPage: NextPage = () => {
-    return (
-        <>
-            Folders
-        </>
-    )
+    return <FoldersWrapper />
 }
 
 export default FoldersPage
