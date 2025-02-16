@@ -48,7 +48,7 @@ const FileCard: FC<FileProps> = ({ file }: FileProps) => {
               </div>
               <div className="flex items-center gap-2 font-bold text-lg mt-4">
                 <Star />
-                <span>Add to starred</span>
+                <span>Add to favorite</span>
               </div>
             </PopoverContent>
           </Popover>
