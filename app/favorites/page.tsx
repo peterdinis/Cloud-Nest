@@ -1,11 +1,8 @@
 import { NextPage } from "next";
+import FavoriteFiles from "../_components/files/FavoriteFiles";
 
 const FavoritesFilesPage: NextPage = () => {
-    return (
-        <>
-            Favorites Files
-        </>
-    )
+    return <FavoriteFiles />
 }
 
 export default FavoritesFilesPage
